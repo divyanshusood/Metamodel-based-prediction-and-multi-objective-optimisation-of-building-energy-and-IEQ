@@ -23,13 +23,9 @@ Originally developed in Jupyter notebooks, the analysis has been consolidated in
 .
 ├─ combined_analysis.py      # Main analysis script (runs end-to-end)
 ├─ notebooks/                # Original sanitized Jupyter notebooks
-│  ├─ Main_0.ipynb
-│  ├─ Main_1.ipynb
-│  └─ Main_3_plotting.ipynb
+│  ├─ combined_analysis.py
 ├─ requirements.txt          # Python dependencies
-├─ .gitignore
-├─ LICENSE                   # MIT License
-└─ publish_to_github.sh      # Helper script to push repo to GitHub
+└─ .gitignore
 ```
 
 ---
