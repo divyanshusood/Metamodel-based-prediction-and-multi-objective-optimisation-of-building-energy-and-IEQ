@@ -4,16 +4,14 @@ This repository contains sanitized Jupyter notebooks for data processing, analys
 All outputs and absolute file paths have been removed to make the code portable and GitHub-friendly.
 Replace placeholders like `<PATH_PLACEHOLDER>` or `<SECRET_PLACEHOLDER>` with your own values when running locally.
 
-## Notebook Topics (auto-detected)
+## Notebook Topics
 
 - Sobol
 - PCA
-- model for heating
-- thermal discomfort HRS
-- co2 concentration > 1000 ppm HRS
+- machine learning prediction model for heating, thermal discomfort HRS and co2 concentration > 1000 ppm HRS
 - comparison separately
 - all three outputs combined
-- optimisation
+- multi-objective optimisation
 - validation
 
 ## Getting Started
