@@ -1,0 +1,12 @@
+SALib
+bayes_opt
+deap
+matplotlib
+mpl_toolkits
+numpy
+pandas
+scikit-learn
+scipy
+seaborn
+statsmodels
+xgboost
