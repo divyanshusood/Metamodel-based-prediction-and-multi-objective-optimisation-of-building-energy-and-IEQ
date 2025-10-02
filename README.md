@@ -1,59 +1,96 @@
-# Research Notebooks: Data Analysis & Plotting
+# Building Energy Analysis and Optimisation
 
-This repository contains sanitized Jupyter notebooks for data processing, analysis, and plotting.
-All outputs and absolute file paths have been removed to make the code portable and GitHub-friendly.
-Replace placeholders like `<PATH_PLACEHOLDER>` or `<SECRET_PLACEHOLDER>` with your own values when running locally.
+This repository contains code and workflows for analyzing building energy performance, occupant comfort, and indoor environmental quality.  
+Originally developed in Jupyter notebooks, the analysis has been consolidated into a single Python script for easier execution and version control.
 
-## Notebook Topics
+---
 
-- Sobol
-- PCA
-- machine learning prediction model for heating, thermal discomfort HRS and co2 concentration > 1000 ppm HRS
-- comparison separately
-- all three outputs combined
-- multi-objective optimisation
-- validation
+## Features
 
-## Getting Started
+- Data preprocessing and cleaning (outlier detection, filtering, column renaming).
+- Principal Component Analysis (PCA) for dimensionality reduction.
+- Sobol sensitivity analysis for input–output relationships.
+- Predictive modelling using **XGBoost** and **scikit-learn** regressors.
+- Evaluation of heating, thermal discomfort hours, and CO₂ concentration.
+- Optimisation routines to balance energy and comfort trade-offs.
+- Plotting and visualisation (all results generated at the end of the script).
 
-1. **Create and activate a virtual environment** (recommended):
-
-```bash
-python -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
-```
-
-2. **Install dependencies**:
-
-```bash
-pip install -r requirements.txt
-```
-
-3. **Open the notebooks**:
-
-```bash
-jupyter notebook notebooks/
-```
-
-> If the notebooks reference files, update any `<PATH_PLACEHOLDER>` values to point to your local data. Keep large datasets out of Git by putting them under the `data/` folder (already ignored via `.gitignore`).
+---
 
 ## Repository Structure
 
 ```
 .
-├─ notebooks/
+├─ combined_analysis.py      # Main analysis script (runs end-to-end)
+├─ notebooks/                # Original sanitized Jupyter notebooks
 │  ├─ Main_0.ipynb
 │  ├─ Main_1.ipynb
 │  └─ Main_3_plotting.ipynb
-├─ requirements.txt
+├─ requirements.txt          # Python dependencies
 ├─ .gitignore
-├─ LICENSE
-└─ publish_to_github.sh
+├─ LICENSE                   # MIT License
+└─ publish_to_github.sh      # Helper script to push repo to GitHub
 ```
 
-## Reproducibility Tips
+---
 
-- Keep raw data in `data/` (ignored by Git).
-- Add configuration values via environment variables or a `.env` file (also ignored).
-- Avoid hardcoding file paths; use `pathlib.Path` and project-relative paths.
+## Getting Started
 
+### 1. Clone or download the repository
+```bash
+git clone https://github.com/<USERNAME>/<REPO>.git
+cd <REPO>
+```
+
+### 2. Create a virtual environment
+```bash
+python -m venv .venv
+source .venv/bin/activate   # On Windows: .venv\Scripts\activate
+```
+
+### 3. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the analysis
+```bash
+python combined_analysis.py
+```
+
+> Replace `<PATH_PLACEHOLDER>` with the correct local path to your dataset (e.g., CSV file).  
+> Replace `<SECRET_PLACEHOLDER>` with any required API keys (if applicable).  
+
+The script will run the entire workflow and produce results and plots at the end.
+
+---
+
+## Dependencies
+
+Detected from the notebooks and included in `requirements.txt`:
+
+- numpy  
+- pandas  
+- scipy  
+- scikit-learn  
+- xgboost  
+- seaborn  
+- matplotlib  
+- statsmodels  
+- SALib  
+- bayes_opt  
+- deap  
+
+---
+
+## Reproducibility Notes
+
+- Keep raw data files in a `data/` folder (this is already ignored by `.gitignore`).
+- Do not commit API keys or credentials — use environment variables or `.env` files.
+- For large projects, consider splitting the workflow into modules (`data.py`, `models.py`, `plots.py`).
+
+---
+
+## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
